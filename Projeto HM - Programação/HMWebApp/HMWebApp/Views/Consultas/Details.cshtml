@@ -1,0 +1,79 @@
+﻿@model HMWebApp.Models.Consultas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consultas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.med.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.med.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pac.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pac.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hr_inicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hr_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hr_fim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hr_fim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coments)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Pacientes)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Course Title</th>
+                    <th>Grade</th>
+                </tr>
+                @foreach (var item in Model.Pacientes)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Grade)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsultasID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
